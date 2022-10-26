@@ -161,7 +161,7 @@ public class DownloadManagerPlugin extends CordovaPlugin {
         cursor.moveToFirst();
         do {
             JSONObject rowObject = new JSONObject();
-	    String downloadFilePath = (c.getString(c.getColumnIndex(DownloadManager.COLUMN_LOCAL_URI))).replace("file://","");
+	    String downloadFilePath = (cursor.getString(cursor.getColumnIndex(DownloadManager.COLUMN_LOCAL_URI))).replace("file://","");
 
             rowObject.put("id", cursor.getString(cursor.getColumnIndex(DownloadManager.COLUMN_ID)));
             rowObject.put("title", cursor.getString(cursor.getColumnIndex(DownloadManager.COLUMN_TITLE)));
